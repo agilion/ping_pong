@@ -1,0 +1,4 @@
+development:
+    database: sqlite3://db/db/development.sqlite3
+test:
+    database: sqlite3://db/db/development.sqlite3
