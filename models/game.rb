@@ -7,6 +7,8 @@ class Game < ActiveRecord::Base
   def finalize!
     self.winner = find_the_winner
     self.loser  = find_the_loser
+    self.completed = true
+    self.completed_at = Time.now
     save
   end
   
