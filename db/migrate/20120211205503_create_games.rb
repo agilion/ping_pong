@@ -1,12 +1,17 @@
 class CreateGames < ActiveRecord::Migration
   def self.up
     create_table :games do |t|
-      t.integer :player_one_id
-      t.integer :player_two_id
-      t.integer :player_one_score
-      t.integer :player_two_score
-      t.boolean :player_one_wins
-      t.boolean :player_two_wins
+      t.integer :challenger_id
+      t.integer :challengee_id
+      t.integer :winner_id
+      t.integer :loser_id
+      t.integer :challenger_score
+      t.integer :challengee_score
+      t.boolean :completed
+      t.boolean :accepted
+      t.timestamp :accepted_at
+      t.timestamp :completed_at
+      t.timestamps
     end
   end
 
