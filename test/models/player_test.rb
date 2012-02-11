@@ -38,4 +38,19 @@ class PlayerTest < Test::Unit::TestCase
     assert_equal @player_b, @game.loser
   end
 
+  def test_calculate_player_rank
+    10.times do
+      Game.create(:challenger => @player_a, :challengee => @player_b, :challenger_score => 21, :challengee_score => 20, :winner => @player_a, :loser => @player_b, :completed_at => Time.now)
+      Game.create(:challenger => @player_a, :challengee => @player_b, :challenger_score => 21, :challengee_score => 20, :winner => @player_a, :loser => @player_b, :completed_at => Time.now)        
+      Game.create(:challenger => @player_b, :challengee => @player_a, :challenger_score => 21, :challengee_score => 20, :winner => @player_b, :loser => @player_b, :completed_at => Time.now)      
+    end
+
+    # TODO Add more games and more players to really test the expected ranks between various players
+
+    Player.rank_players!
+    @player_a = Player.find_by_full_name("Sean Behan")
+    @player_b = Player.find_by_full_name("Pete Land")
+    assert @player_a.rank > @player_b.rank
+  end
+  
 end

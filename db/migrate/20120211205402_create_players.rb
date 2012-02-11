@@ -3,6 +3,7 @@ class CreatePlayers < ActiveRecord::Migration
     create_table :players do |t|
       t.string :full_name
       t.string :screen_name
+      t.float :rank
     end
   end
 
