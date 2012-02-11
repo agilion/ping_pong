@@ -45,7 +45,7 @@ class PlayerTest < Test::Unit::TestCase
       Game.create(:challenger => @player_b, :challengee => @player_a, :challenger_score => 21, :challengee_score => 20, :winner => @player_b, :loser => @player_b, :completed_at => Time.now)      
     end
 
-    # TODO Add more games and more players to really test the expected ranks between various players
+    # TODO Add more games and more players to really test the expected ranks between various players with multiple wins/losses!
 
     Player.rank_players!
     @player_a = Player.find_by_full_name("Sean Behan")

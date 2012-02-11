@@ -9,6 +9,7 @@ class Game < ActiveRecord::Base
     self.loser  = find_the_loser
     self.completed = true
     self.completed_at = Time.now
+    # Player.rank_players!
     save
   end
   

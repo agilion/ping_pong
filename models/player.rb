@@ -15,12 +15,7 @@ class Player < ActiveRecord::Base
   end
   
   def calculate_rank!
-    # Python implementation of Gravity Algorithm
-    # http://amix.dk/blog/post/19574
-    # (wins.count - 1) / pow((wins.last.completed_at.hour + 2), GRAVITY) if wins.any?
-    # 
-    # (10 - 1) / ((12 - 2)**1.8)
-    #    
+    # Based on a Python implementation of Gravity Algorithm used to rank "Hotness" of Hacker News Articles. http://amix.dk/blog/post/19574
     player_rank = if wins.empty?
       0.0
     else
@@ -29,6 +24,7 @@ class Player < ActiveRecord::Base
     update_attribute(:rank, player_rank)
   end
   
+  # Rerank all players (trigger when a new game has been finalized)
   def self.rank_players!
     Player.all.each do |player|
       player.calculate_rank!
