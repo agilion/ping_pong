@@ -13,6 +13,7 @@ gem "activerecord", "~> 3.2.1"
 gem "mysql", "~> 2.8.1"
 gem "sqlite3", "~> 1.3.5"
 
+gem "awesome_print", "~> 1.0.2"
 gem "turn", 		    "~> 0.9.1"
 gem "minitest", 	  "~> 2.11.1"
 gem "database_cleaner", "~> 0.7.1"
