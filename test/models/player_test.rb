@@ -55,9 +55,9 @@ class PlayerTest < Test::Unit::TestCase
     end
 
     3.times do
-      # Tom beats Pete once by 3
+      # Tom beats Pete by 3
       Game.create(:challenger => @player_c, :challengee => @player_b, :challenger_score => 21, :challengee_score => 18, :winner => @player_c, :loser => @player_b, :completed_at => Time.now)
-      # Tom beats Sean once by 1
+      # Tom beats Sean by 1
       Game.create(:challenger => @player_c, :challengee => @player_a, :challenger_score => 21, :challengee_score => 20, :winner => @player_c, :loser => @player_a, :completed_at => Time.now)
     end
 
@@ -73,7 +73,7 @@ class PlayerTest < Test::Unit::TestCase
       puts [Player.by_rank.send(place).full_name, Player.by_rank.send(place).wins.count, Player.by_rank.send(place).losses.count, Player.by_rank.send(place).rank].join("\t")
     end
 
-    assert false
+    # assert false
   end
 
 end
