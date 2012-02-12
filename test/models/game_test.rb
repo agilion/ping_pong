@@ -41,4 +41,14 @@ class GameTest < Test::Unit::TestCase
     @game.challengee = @player_b
     assert_equal true, @game.its_a_tie!
   end
+
+  def test_find_the_winners_score
+      @game = Game.create(:challenger => @player_a, :challengee => @player_b, :challenger_score => 21, :challengee_score => 19, :winner => @player_a, :loser => @player_b, :completed_at => Time.now)
+      @game.finalize!
+
+      assert_equal @player_a, @game.winner
+      assert_equal @player_b, @game.loser
+      assert_equal 21, @game.winner_score
+      assert_equal 19, @game.loser_score
+  end
 end

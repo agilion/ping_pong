@@ -7,6 +7,8 @@ class Game < ActiveRecord::Base
   def finalize!
     self.winner = find_the_winner
     self.loser  = find_the_loser
+    self.winner_score = find_winners_score
+    self.loser_score = find_losers_score
     self.completed = true
     self.completed_at = Time.now
     # Player.rank_players!
@@ -23,6 +25,14 @@ class Game < ActiveRecord::Base
     return nil if its_a_tie!
 
     challenger_score < challengee_score ? challenger : challengee
+  end
+
+  def find_winners_score
+    winner == challenger ? challenger_score : challengee_score
+  end
+
+  def find_losers_score
+    winner == challenger ? challengee_score : challenger_score
   end
 
   def its_a_tie!

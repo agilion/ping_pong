@@ -7,6 +7,8 @@ class CreateGames < ActiveRecord::Migration
       t.integer :loser_id
       t.integer :challenger_score
       t.integer :challengee_score
+      t.integer :winner_score
+      t.integer :loser_score
       t.boolean :completed
       t.boolean :accepted
       t.timestamp :accepted_at
