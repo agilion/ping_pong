@@ -10,7 +10,6 @@ class WebAppTest < Test::Unit::TestCase
 
   def test_index
     get '/'
-    assert_equal 'Hello World', last_response.body
     assert last_response.ok?
   end
 
@@ -21,6 +20,11 @@ class WebAppTest < Test::Unit::TestCase
 
   def test_player_profiles
     get '/players/1'
+    assert last_response.ok?
+  end
+
+  def test_players_search
+    get '/players/search?full_name=sea'
     assert last_response.ok?
   end
 

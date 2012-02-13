@@ -11,6 +11,10 @@ class WebApp < Sinatra::Base
     erb :'players/show'
   end
 
+  # Search for players to challenge!
+  get '/players/search' do
+  end
+
   # An elaboration of the homepage but with all time statistics (Total num wins/losses, Greatest player on the platform ever)
   get '/leaderboard' do
     erb :leaderboard

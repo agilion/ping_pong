@@ -4,6 +4,13 @@
   <title>Ping Pong</title>
   <script type="text/javascript" src="http://use.typekit.com/rix3vsh.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <script type="text/javascript" charset="utf-8" src="/javascripts/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/javascripts/json2.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/javascripts/underscore.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/javascripts/backbone.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/javascripts/application.js"></script>
+
   <link rel="stylesheet" href="/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
@@ -14,13 +21,21 @@
   <div id="header">
     <ul id="menu">
       <li><a href="#">Challenge</a></li>
-      <li><a href="#">Signup</a></li>
-      <li><a href="#">Logout</a></li>
+      <li><a href="#">Leaderboard</a></li>
     </ul>
   </div>
 
   <img src="/images/Table-Tennis.png" id="paddle">
   <div id="content">
+
+    <div id="new_game">
+      <form>
+        Sean Behan Vs.
+        <input type="text" name="game[challengee]" style="padding:5px;width:200px;" placeholder="Start typing opponents name...">
+        <button>Challenge!</button>
+      </form>
+    </div>
+
     <%= yield %>
   </div>
 
