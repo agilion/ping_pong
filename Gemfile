@@ -3,6 +3,7 @@ source "https://rubygems.org"
 gem "heroku"
 gem "sinatra", "~> 1.3.2"
 gem "sinatra-activerecord", "~> 0.1.3"
+gem "sinatra-reloader", "~> 1.0"
 gem "rack-test",    "~> 0.6.1"
 
 gem "thin", "~> 1.3.1"
