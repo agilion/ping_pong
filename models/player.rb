@@ -42,4 +42,8 @@ class Player < ActiveRecord::Base
       player.calculate_rank!
     end
   end
+
+  def to_s
+    full_name
+  end
 end

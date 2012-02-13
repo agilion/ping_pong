@@ -1,0 +1,54 @@
+body {
+	background:url(http://subtlepatterns.com/patterns/tileable_wood_texture.png);
+/*	background:url(http://subtlepatterns.com/patterns/grid_noise.png);
+	background:url(http://subtlepatterns.com/patterns/perforated_white_leather.png);*/
+	font-family:helvetica;
+	font-weight:300;
+	text-align:center;
+}
+
+#page {
+	width:500px;
+	margin:0px auto;
+	background:#337C48;
+	padding:45px;
+	border:solid 10px #FFF;
+	box-shadow:5px 4px 5px #999;
+	height:900px;
+}
+
+img#paddle {
+	position:absolute;
+	top:10px;
+	margin-left:400px;
+}
+
+h1 {
+	font-family: "kegger-collegiate",serif;
+	font-size:70px;
+	position:relative;
+	z-index:99;
+	text-shadow:1px 1px 1px #FFF;
+}
+
+li {
+	display:inline;
+}
+
+a {
+	font-family: "kegger-collegiate",serif;
+	text-decoration:none;
+	color:#102817;
+	font-size:30px;
+	margin:0px 7px;
+}
+
+h2,h3 {
+	font-family: "kegger-collegiate",serif;
+	color:#102817;
+}
+
+#podium img {
+  	border:solid 1px #EEE;
+	box-shadow:4px 3px 4px #333;
+}

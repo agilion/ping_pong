@@ -38,4 +38,8 @@ class Game < ActiveRecord::Base
   def its_a_tie!
     challenger_score == challengee_score
   end
+
+  def to_s
+    "#{winner}"
+  end
 end
